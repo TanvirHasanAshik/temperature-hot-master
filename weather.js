@@ -10,7 +10,7 @@ document.getElementById("weather-search").addEventListener("click", function(){
     .then(res => res.json())
     .then(data => {
         city.innerText = `${data.name}, ${data.sys.country}  `;
-        temp.innerText = Math.floor(data.main.temp - 273.15)+"° C";
+        temp.innerText = Math.ceil(data.main.temp - 273.15)+"° C";
         weatherDescription.innerText = data.weather[0].description;
         console.log(data);
         
